@@ -32,9 +32,52 @@ arr = [10, 4, 2, 4, 1]
 - **Expected Time Complexity:** O(n)
 - **Expected Auxiliary Space Complexity:** O(1)
 
-### Accepted Solutions (2)
+### Accepted Solutions (3)
 
 #### Solution 1 (Python)
+
+- **Submitted:** 2026-11-14 21:57:07
+- **Status:** Correct
+- **Marks:** 0
+
+```python
+import numpy as np
+
+class Solution:
+    def leaders(self, arr):
+        arr = np.asarray(arr)
+        if arr.size == 0:
+            return []
+
+        rev = arr[::-1]
+        
+        cummax = np.maximum.accumulate(rev)
+
+        mask = (rev == cummax)
+
+        return rev[mask][::-1].tolist()
+        
+'''class Solution:
+    def leaders(self, arr):
+        result = []
+        n = len(arr)
+
+        for i in range(n):
+            leader = True 
+
+
+            for j in range(i+1,n):
+                if arr[i] < arr[j]:
+                    leader = False
+                    break
+
+            if leader:
+                result.append(arr[i])                   # 1110/1111 tes case run
+
+        return result'''
+```
+
+#### Solution 2 (Python)
 
 - **Submitted:** 2026-10-31 11:15:58
 - **Status:** Correct
@@ -58,7 +101,7 @@ class Solution:
         return rev[mask][::-1].tolist()
 ```
 
-#### Solution 2 (Python)
+#### Solution 3 (Python)
 
 - **Submitted:** 2026-10-31 11:15:45
 - **Status:** Correct
@@ -82,4 +125,4 @@ class Solution:
         return rev[mask][::-1].tolist()
 ```
 
-*Generated on: 31/10/2026, 11:16:19*
+*Generated on: 14/11/2026, 21:57:30*
