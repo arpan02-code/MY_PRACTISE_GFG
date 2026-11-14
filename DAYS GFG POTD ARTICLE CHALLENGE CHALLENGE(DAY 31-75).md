@@ -21,11 +21,11 @@ The problem can be found at the following link: [Question Link](https://www.geek
 - **Expected Time Complexity:** O(n)
 - **Expected Auxiliary Space Complexity:** O(1)
 
-### Accepted Solutions (2)
+### Accepted Solutions (3)
 
 #### Solution 1 (Python)
 
-- **Submitted:** 2026-11-02 20:07:02
+- **Submitted:** 2026-11-14 21:55:37
 - **Status:** Correct
 - **Marks:** 0
 
@@ -48,6 +48,29 @@ class Solution:
 
 #### Solution 2 (Python)
 
+- **Submitted:** 2026-11-02 20:07:02
+- **Status:** Correct
+- **Marks:** 0
+
+```python
+class Solution:
+    def findDuplicates(self, arr):
+        # code here
+        f ={}
+        count=0 
+        for x in arr:
+            f[x]= f.get(x,0)+1
+        ans=[]
+        
+        for x ,count in f.items():
+            if count >1:
+                ans.append(x)
+                
+        return sorted(ans)
+```
+
+#### Solution 3 (Python)
+
 - **Submitted:** 2026-11-02 20:06:51
 - **Status:** Correct
 - **Marks:** 2
@@ -69,4 +92,4 @@ class Solution:
         return sorted(ans)
 ```
 
-*Generated on: 02/11/2026, 20:07:26*
+*Generated on: 14/11/2026, 21:55:59*
