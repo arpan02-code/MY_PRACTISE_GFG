@@ -33,11 +33,11 @@ a[] = [1, 4, 8, 10, 12], b[] = [5, 7, 11, 15, 17], k = 6
 - **Expected Time Complexity:** O(log(min(a, b)))
 - **Expected Auxiliary Space Complexity:** O(1)
 
-### Accepted Solutions (2)
+### Accepted Solutions (3)
 
 #### Solution 1 (Python)
 
-- **Submitted:** 2026-11-14 21:53:19
+- **Submitted:** 2026-11-14 21:53:47
 - **Status:** Correct
 - **Marks:** 0
 
@@ -57,6 +57,26 @@ class Solution:
 
 #### Solution 2 (Python)
 
+- **Submitted:** 2026-11-14 21:53:19
+- **Status:** Correct
+- **Marks:** 0
+
+```python
+import numpy as np
+
+class Solution:
+    def kthElement(self, a, b, k):
+
+        arr_a = np.array(a)
+        arr_b = np.array(b)
+
+        c = np.concatenate((arr_a, arr_b))
+        c.sort()
+        return int(c[k - 1])
+```
+
+#### Solution 3 (Python)
+
 - **Submitted:** 2026-11-03 18:35:34
 - **Status:** Correct
 - **Marks:** 4
@@ -75,4 +95,4 @@ class Solution:
         return int(c[k - 1])
 ```
 
-*Generated on: 14/11/2026, 21:53:37*
+*Generated on: 14/11/2026, 21:54:10*
